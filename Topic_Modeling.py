@@ -80,10 +80,10 @@ number_topics = 5
 lda_model = models.LdaModel(corpus, id2word=dictionary, num_topics=number_topics)
 corpus_lda = lda_model[corpus_tfidf_md]
 #Show first n important word in the topics:
-lda.show_topics(number_topics,5)
+lda_model.show_topics(number_topics,5)
 from collections import OrderedDict
 
-data_lda = {i: OrderedDict(lda.show_topic(i,25)) for i in range(number_topics)}
+data_lda = {i: OrderedDict(lda_model.show_topic(i,25)) for i in range(number_topics)}
 #data_lda
 
 import pandas as pd
